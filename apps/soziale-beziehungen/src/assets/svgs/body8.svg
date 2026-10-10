@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Klein und gedrungen</title>
+  <g id="body8" style="display:inline;fill:#fff;stroke:#000;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 106,25 C 82,22 64,34 56,53 C 47,73 50,99 63,114 C 74,127 90,133 106,132 C 125,133 142,123 151,107 C 161,89 158,62 146,45 C 136,31 121,25 106,25 Z"/>
+    <path d="M 78,138 C 65,151 61,171 63,193 C 65,217 74,239 86,252 C 98,260 122,261 137,253 C 149,238 155,216 155,195 C 155,171 149,151 136,138 C 120,144 94,144 78,138 Z"/>
+    <path d="M 12,258 C 40,251 69,256 96,257 C 125,258 154,265 190,256" fill="none" stroke-width="1.7"/>
+    <path d="M 194,252 C 197,251 199,250 201,251" fill="none" stroke-width="2.1"/>
+  </g>
+</svg>

@@ -1,0 +1,182 @@
+<!--
+  Teamdynamik-Visualisierung by LöWe - Lösungsorientierte Weiterbildung
+  Marke der Inhalt & Form Beratungsgesellschaft mbH, https://loewe-weiterbildung.de/
+  Copyright (c) 2026 Stefan Pätz
+  Idee, Konzept, Programmierung (inkl. SVGs): Stefan Pätz
+  Verwendung von D3.js (https://d3js.org/) – Lizenz siehe https://github.com/d3/d3/blob/main/LICENSE
+  Stand: 2026-02
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visualisierung sozialer Beziehungen | Inhalt &amp; Form</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/inhaltform.css">
+</head>
+<body>
+  <div id="app-layout">
+    <!-- Stage: Visualisierung -->
+    <main id="stage" aria-label="Visualisierung">
+      <div id="canvas-viewport">
+        <div id="canvas-loader" aria-live="polite" aria-label="Lädt">
+          <div class="loader-card">
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <div class="loader-text">Lade Visualisierung…</div>
+          </div>
+        </div>
+
+        <div id="canvas-scaler">
+          <!-- HUD Layer -->
+          <div id="hud-layer" aria-label="Bedienelemente">
+            <!-- TOP LEFT: Controls -->
+            <section id="hud-controls" class="hud-card hud-card--controls" aria-label="Eingabe und Aktionen">
+              <div
+                class="controls-wrap"
+                data-tip="Halte STRG und drücke Enter, um einen Aspekt hinzuzufügen."
+              >
+                <!-- ✅ Clean Input + Inline Buttons -->
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="person-input"
+                    placeholder="Name oder Aspekt…"
+                    autocomplete="off"
+                    aria-label="Name oder Aspekt eingeben"
+                    maxlength="18"
+                    inputmode="text"
+                    spellcheck="false"
+                    pattern="[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß \-']*"
+                  >
+
+                  <div class="input-actions" aria-label="Test-Steuerung">
+                    <button
+                      id="btn-random-add"
+                      class="input-icon-btn has-tip"
+                      type="button"
+                      aria-label="Zufällige Person hinzufügen"
+                      data-tip="Zufällige Person hinzufügen"
+                      disabled
+                    >+</button>
+
+                    <button
+                      id="btn-random-remove"
+                      class="input-icon-btn has-tip"
+                      type="button"
+                      aria-label="Zufällige Person entfernen"
+                      data-tip="Zufällige Person entfernen"
+                      disabled
+                    >−</button>
+                  </div>
+                </div>
+
+                <div class="hud-row">
+                  <button id="act-btn" class="btn btn-primary btn-large" type="button">Person hinzufügen</button>
+                  <button id="reset" class="btn btn-outline btn-small" type="button">Reset</button>
+                </div>
+              </div>
+            </section>
+
+            <!-- TOP RIGHT: Time -->
+            <section id="canvas-hud" class="hud-card hud-card--ghost" aria-label="Zeit">
+              <div id="zeit-widget">
+                <div id="zeit-widget-content"></div>
+              </div>
+            </section>
+
+            <!-- BOTTOM LEFT: Stats (neu) -->
+            <section id="hud-stats" class="hud-card hud-card--stats" aria-label="Statistik">
+              <div class="hud-title">Statistik</div>
+
+              <div class="stats-list" role="list">
+                <!-- Personen -->
+                <div class="stat-row" id="stat-row-persons" role="listitem">
+                  <span class="stat-ic" aria-hidden="true">
+                    <!-- user icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 17 14 12 14z"/>
+                    </svg>
+                  </span>
+                  <span class="stat-label">Personen</span>
+                  <span class="stat-val" id="stat-persons">0</span>
+                </div>
+
+                <!-- Aspekte -->
+                <div class="stat-row" id="stat-row-aspects" role="listitem">
+                  <span class="stat-ic" aria-hidden="true">
+                    <!-- hexagon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 2 20 7v10l-8 5-8-5V7l8-5zm0 2.2L6 7.7v8.6l6 3.7 6-3.7V7.7l-6-3.5z"/>
+                    </svg>
+                  </span>
+                  <span class="stat-label">Aspekte</span>
+                  <span class="stat-val" id="stat-aspects">0</span>
+                </div>
+
+                <!-- Beziehungen -->
+                <div class="stat-row" id="stat-row-relationships" role="listitem">
+                  <span class="stat-ic" aria-hidden="true">
+                    <!-- link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M3.9 12a5 5 0 0 1 5-5h4v2h-4a3 3 0 0 0 0 6h4v2h-4a5 5 0 0 1-5-5zm7.1 1h2v-2h-2v2zm4-6h-4V5h4a5 5 0 1 1 0 10h-4v-2h4a3 3 0 0 0 0-6z"/>
+                    </svg>
+                  </span>
+                  <span class="stat-label">Beziehungen</span>
+                  <span class="stat-val" id="stat-relationships">0</span>
+                </div>
+
+                <!-- Metabeziehungen -->
+                <div class="stat-row" id="stat-row-metarelations" role="listitem">
+                  <span class="stat-ic" aria-hidden="true">
+                    <!-- layers -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 3 2 8l10 5 10-5-10-5zm0 7.2L4.6 8 12 4.8 19.4 8 12 10.2zM2 12l10 5 10-5v2l-10 5-10-5v-2zm0 5l10 5 10-5v2l-10 5-10-5v-2z"/>
+                    </svg>
+                  </span>
+                  <span class="stat-label">Metabeziehungen</span>
+                  <span class="stat-val" id="stat-metarelations">0</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- BOTTOM RIGHT: Export (neu) -->
+            <section id="hud-export" class="hud-card" aria-label="Export">
+              <div class="hud-title">Export</div>
+
+              <div class="hud-export-row">
+                <button id="export-icon" class="export-icon" title="Netzwerk als PNG herunterladen" aria-label="PNG herunterladen" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="download-icon" aria-hidden="true">
+                    <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-9 4v-2h18v2H3z"/>
+                  </svg>
+                  <span>PNG</span>
+                </button>
+
+                <span class="tools-sep" aria-hidden="true">|</span>
+
+                <button id="export-icon-svg" class="export-icon" title="Netzwerk als SVG herunterladen" aria-label="SVG herunterladen" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="download-icon" aria-hidden="true">
+                    <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-9 4v-2h18v2H3z"/>
+                  </svg>
+                  <span>SVG</span>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <!-- SVG -->
+          <svg id="network" width="1440" height="900"></svg>
+          <!-- Tooltip (Genogramm) – liegt im Scaler, damit er mitskaliert -->
+          <div id="tooltip" aria-hidden="true"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- D3 & App -->
+  <script src="vendor/d3.v6.min.js"></script>
+  <script type="module" src="src/app.js"></script>
+
+</body>
+</html>

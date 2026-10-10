@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Links zeigend</title>
+  <g id="armlinks7" style="display:inline;fill:none;stroke:#000;stroke-width:2.65;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 72,144 C 60,138 52,129 45,118 C 41,112 37,108 33,105"/>
+    <path d="M 34,105 C 31,103 28,101 25,99 C 22,97 20,94 22,92 C 24,90 27,93 29,94 L 42,100 C 45,101 47,104 46,108 C 45,112 42,115 39,116"/>
+    <path d="M 34,105 C 31,108 31,112 35,114"/>
+  </g>
+</svg>

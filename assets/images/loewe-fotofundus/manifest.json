@@ -1,0 +1,198 @@
+[
+  {
+    "source": "072-Cubesklein.jpg",
+    "name": "zauberwuerfel",
+    "prompt": "Use case: lighting-weather / strict existing-photo preservation. Edit ONLY image 1, the ORIGINAL real close-up of an unusual twisty cube puzzle. Images 2–4 are Inhalt & Form LIGHT/COLOR REFERENCES ONLY. The user rejects a newly constructed cube and expressly wants this exact macro crop. Retain exactly the existing irregular colored tile shapes, orientations, puzzle geometry, black separators, wear, framing, camera angle, shallow depth of field and relative scale. Do NOT show the complete cube, do NOT zoom out, do NOT change the crop, do NOT add a table, wall, new cube or objects. ONLY adjust lighting, white balance, local exposure/tonal contrast and restrained selective saturation to match natural bright reference daylight, clean neutral highlights, open detailed blacks and subtly warm neutral midtones. Colors remain distinct and believable; no global orange/sepia wash. Preserve the photo's original widescreen aspect ratio and photographic texture. Return the same photograph with the Inhalt & Form color and light treatment, not a reconstruction.",
+    "status": "Freigegeben am 07.10.2026",
+    "edit_target": "C:/Users/paetz/Webflow-Site/.local-maintenance/loewe-fotofundus/originale/072-Cubesklein.jpg",
+    "revision": 2,
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2022/05/Cubesklein.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/erweiterungskurs/"
+    ],
+    "source_sha256": "6ed9e60287a37fa585f7a9d606444e4b770ea2990335b3087f765d0e16730eee",
+    "output": "zauberwuerfel.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "output_sha256": "e2f4fabc2cb939d65efce7b2d2e0e7b1520c8d0f93180e001fec7ce66e4162da"
+  },
+  {
+    "source": "076-baumschloss.jpg",
+    "name": "baumschloss",
+    "prompt": "Edit ONLY image 1, the existing bright castle-on-table photograph. Images 2–4 are Inhalt & Form light and color references only. Remove the carving tool/chisel lying on the table to the left of the wood castle AND remove all wood shavings/chips around it. Seamlessly restore the plain bright off-white tabletop in the removed areas with correct natural texture and shadows. Preserve the exact existing REAL wood castle object, windows, bark, silhouette, geometry, pose, scale, lighting, pale concrete wall, background chair, existing focus and 3:2 framing. Do not carve, redesign or rebuild the castle. It is a purchased existing object, not a DIY carving activity. Add no objects. Keep the already approved bright daylight and clean white values. This is a targeted object removal only.",
+    "status": "Freigegeben am 07.10.2026",
+    "edit_target": "C:/Users/paetz/Webflow-Site/.local-maintenance/loewe-fotofundus/master/baumschloss.png",
+    "revision": 2,
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2022/06/baumschloss.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/erweiterungskurs/"
+    ],
+    "source_sha256": "a97c35fa7e65b60698e64a1fa014fa22df815dec23fbbe66967b139288282cf4",
+    "output": "baumschloss.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "d528969b71dd0772c010dc78047ff8c7b78a21916d80846754a658d8f668107a"
+  },
+  {
+    "source": "086-weiß-scaled.jpg",
+    "name": "pusteblume",
+    "prompt": "Use case: lighting-weather / strict existing-photo preservation. Edit ONLY image 1, the user's original macro photograph of a partly dispersed dandelion head with airborne seeds. Images 2–4 are Inhalt & Form LIGHT/COLOR REFERENCES ONLY. Keep EXACTLY the existing very close crop, perspective, seed positions, seed head, existing focus/blur, delicately backlit filaments and photographic background. Do NOT zoom out, do NOT add glass, vase, table, wall, new flowers or objects. Do not invent or rearrange seeds. Adjust ONLY white balance, exposure, local tonal contrast and restrained selective color for the same natural bright soft photographic light as the references, clean off-white/white seed highlights, open shadows and gently warm neutral background; retain depth and details without washing out the fine filaments. No global sepia/orange/brown wash or darkening. Preserve original 16:9 aspect ratio. Return the original photograph in the Inhalt & Form light/color treatment.",
+    "status": "Freigegeben am 07.10.2026",
+    "edit_target": "C:/Users/paetz/Webflow-Site/.local-maintenance/loewe-fotofundus/originale/086-weiß-scaled.jpg",
+    "revision": 2,
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2020/04/weiß-scaled.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/bildergeschichten-2/"
+    ],
+    "source_sha256": "842bc6fdd8cbc940cd42105e7db49d004caa42f0a16427e6b39506970652a999",
+    "output": "pusteblume.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "output_sha256": "ac5ba7da8b6127fce5c96d20b6479946d5b1e9ff4cbdeb25e7d1bf72235b432e"
+  },
+  {
+    "name": "murmeln",
+    "source": "050-Murmelstartdarkshort.jpg",
+    "prompt": "Edit target image 1. Images 2–4 are authoritative light/color/style references ONLY from the Inhalt & Form photoshoot. Radically restage the SAME eight colorful glass emotion marbles with their distinctive painted faces and clear acrylic stands on a clean bright matte off-white seminar table in the same daylight studio as the references, with softly blurred pale concrete wall. Preserve all eight marbles' distinct colors, expressions, transparent glass material, approximate arrangement and stands; do not turn these into generic plain marbles. Replace the dark stone table and dark outdoors reflections with the new bright indoor scene and physically correct window reflections in glass. Natural bright daylight, clean white highlights, open detailed shadows, authentic shallow depth of field, selective warm tones, no orange/sepia wash, no darkening, no artificial CGI look. Landscape 3:2 with enough breathing room for website cropping. This should look like a real prop detail photograph taken during the reference photoshoot. No people, no lettering, no logos.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2016/04/Murmelstartdarkshort.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/"
+    ],
+    "source_sha256": "edb0e057a1b213bf85625a5208e4de33093b39ecc851b0e8917fd2070ee4f0b9",
+    "output": "murmeln.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "945acc041dbf99374b7e2d846eb85c3d29c49205e7d678f6fd6a69e79507c6f7"
+  },
+  {
+    "source": "003-Stifte.jpg",
+    "name": "stifte",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same black and red push-button pens with chrome ends in the wooden pen holder. Put the holder on a bright off-white seminar table, pale concrete background, close macro detail with shallow depth. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2016/04/Stifte.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/aufbaukurs/",
+      "https://loewe-weiterbildung.de/"
+    ],
+    "source_sha256": "8d423b82bf0232fe32d64ff1e3451b724dc750bf3b9be8f8b38d8e108cc9a4bf",
+    "output": "stifte.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "6f5e38d0298722964f3b650cb4dbec6c89741bc548b3f6b2b70c9a3f535967b3"
+  },
+  {
+    "source": "046-Huete.jpg",
+    "name": "filzhuete",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same green, light blue, red and orange rolled felt hats/cones. Restage on a bright off-white seminar table, green felt foreground sharply textured, remaining cones receding softly against pale concrete. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2016/04/Huete.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/",
+      "https://loewe-weiterbildung.de/kompakt/",
+      "https://loewe-weiterbildung.de/erweiterungskurs/"
+    ],
+    "source_sha256": "d224a5f96fc89e65f3aaed672d2f3b3a0d4f46b495b032e861d740f1178332da",
+    "output": "filzhuete.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "90b811889429ff99bebccef7eb0e8af690cbe9ba2f64ad4cf61a6903a7276fe7"
+  },
+  {
+    "source": "056-skulptur.jpg",
+    "name": "figurenskulptur",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same colorful little flat plastic people assembled into an interlinked sculpture inside a curved wooden bowl/frame. Restage brightly on an off-white table, preserve thin silhouettes and connected relationships, readable sculptural detail, no new humans. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2016/04/skulptur.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/kompakt/"
+    ],
+    "source_sha256": "44353ddc3a0373c0e71d81504d6e863a7796465baed4005f6d22dcca83159626",
+    "output": "figurenskulptur.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "f40fcff78bf2d3855842229c49341e8fec41426add05cb69e5877a90b6cdb7fa"
+  },
+  {
+    "source": "078-Federnklein.jpg",
+    "name": "federn",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same delicate colorful feathers, orange yellow and pale blue white. Restage several real feathers on off-white seminar table in a bright macro editorial composition, delicate sharply resolved barbs, natural orange instead of orange overlay. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2022/05/Federnklein.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/erweiterungskurs/"
+    ],
+    "source_sha256": "268f5c5878e88cec76344ffa668c38360ef2a59fb657bf14ffec5c38fac9a7b7",
+    "output": "federn.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "output_sha256": "c510cb91b31ce9f3f2d72095e12f558ae556a9a127f80ce54e4a689b8fd85144"
+  },
+  {
+    "source": "080-Abstrakt.jpg",
+    "name": "glasreflexionen",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same abstract close view through curved clear glass with soft colorful refractions. Restage actual clear rounded glass objects on a bright off-white seminar table with a pale concrete background and restrained soft color reflections. Preserve abstract shallow-focus photographic quality and clear glass transparency, no CGI bubbles. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2020/12/Abstrakt.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/virtuelle-treffpunkte/"
+    ],
+    "source_sha256": "22c7e6929249a3efb249c6f1c618db315a659f137c634c2d113e4136bf27f932",
+    "output": "glasreflexionen.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "output_sha256": "9aa75fa0405252d9d594221cc9d25dd1947b5e7c3ff5abb6c176a4c1e52e217b"
+  },
+  {
+    "source": "082-Spielwiese-Symbol-schlank.jpg",
+    "name": "spielwiese",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same bee on a small pale flower, macro close-up. Recreate in bright natural diffused daylight with soft pale green and off-white bokeh matching gentle reference brightness. Real bee anatomy, flower texture and soft shadows. Landscape photo without circular crop, no artificial toys. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2021/01/Spielwiese-Symbol-schlank.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/virtuelle-treffpunkte/"
+    ],
+    "source_sha256": "0373d021102fae5919d833da605afc227eec96f789ade5daeceb2ef5165d83bd",
+    "output": "spielwiese.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "8182e45fe6ffdcc9ac8a3825b99623cf2c0912080f0f8819e05153cb4fbc97bf"
+  },
+  {
+    "source": "098-5431722153318932284.jpg",
+    "name": "aufstellungsbrett",
+    "prompt": "Use case: photorealistic-natural / substantial scene restaging. Edit image 1, the LöWe source motif. Images 2–4 are authoritative Inhalt & Form photoshoot light and color references ONLY, not extra subjects. This is explicitly a substantial new staging, not a gentle color correction. The same pale wooden board with an arrangement of cylindrical wooden figures and distinctive red white yellow-headed pieces. Restage on bright off-white seminar table against pale concrete, documentary angled overhead photograph, preserve figure count and relative arrangement from source, natural wood texture. Make this look like a real prop or scene photograph captured by the same photographer during that reference shoot. Bright natural diffused window daylight, clean off-white to white highlights, open detailed shadows, subtly warm natural midtones with color warmth confined to existing materials. No sepia or orange wash, no overall darkening, no glossy advertising or CGI look. Keep recognizable source motif, realistic physical materials and lens depth. Landscape 3:2, enough room around the subject for cropping, no logos, no extra captions. No reference people added.",
+    "status": "Freigegeben am 07.10.2026",
+    "source_url": "https://loewe-weiterbildung.de/wp-content/uploads/2024/09/5431722153318932284.jpg",
+    "source_pages": [
+      "https://loewe-weiterbildung.de/supervisionstage/"
+    ],
+    "source_sha256": "4bd3303d4bf23a637b576bacb46c83f921679d54420e6de890a896886052a082",
+    "output": "aufstellungsbrett.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "output_sha256": "9a64f90fa0ac92ed73287d3f9f525d4914a2aa1d0b2371497f635f4306a6dea1"
+  }
+]
