@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Rund und zweiteilig</title>
+  <g id="body5" style="display:inline;fill:#fff;stroke:#000;stroke-width:3.15;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 108,22 C 83,19 63,31 54,50 C 43,72 46,102 62,119 C 73,131 90,136 106,135 C 127,136 145,126 154,109 C 165,88 161,57 147,41 C 137,30 124,22 108,22 Z"/>
+    <path d="M 86,137 C 73,148 68,170 69,194 C 69,220 76,245 88,261 C 99,267 116,268 128,261 C 139,244 145,220 144,195 C 143,169 136,147 124,137 C 113,142 98,142 86,137 Z"/>
+    <path d="M 14,265 C 42,258 72,262 98,263 C 124,265 151,270 186,262" fill="none" stroke-width="1.7"/>
+    <path d="M 191,258 C 194,256 197,255 199,256" fill="none" stroke-width="2.1"/>
+  </g>
+</svg>

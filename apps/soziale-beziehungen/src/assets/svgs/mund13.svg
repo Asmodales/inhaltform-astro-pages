@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Zähne zusammen</title>
+  <g id="mund13" style="display:inline;fill:#fff;stroke:#000;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 87,111 C 98,109 119,109 130,112 L 129,124 C 117,126 99,126 88,123 Z"/>
+    <path d="M 96,111 L 96,124 M 105,110 L 105,125 M 115,110 L 115,125 M 123,111 L 122,124" fill="none" stroke-width="1.15"/>
+  </g>
+</svg>

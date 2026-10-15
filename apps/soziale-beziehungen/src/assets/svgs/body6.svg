@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Birnenkörper</title>
+  <g id="body6" style="display:inline;fill:#fff;stroke:#000;stroke-width:3.15;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 106,22 C 87,20 68,29 58,45 C 45,65 45,93 57,112 C 66,127 83,135 104,136 C 125,137 143,128 153,111 C 164,91 162,62 149,43 C 139,29 123,22 106,22 Z"/>
+    <path d="M 91,137 C 82,147 79,160 77,175 C 74,192 66,216 68,235 C 69,248 77,259 90,263 C 102,267 126,268 139,260 C 150,251 151,237 147,220 C 144,204 138,184 137,169 C 136,154 131,143 122,137 C 112,141 101,141 91,137 Z"/>
+    <path d="M 12,265 C 35,259 67,261 94,263 C 124,265 151,270 189,262" fill="none" stroke-width="1.7"/>
+    <path d="M 194,257 C 196,256 198,255 200,256" fill="none" stroke-width="2.1"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Schielend</title>
+  <g id="augen37" style="display:inline;stroke:#000;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 104,61 C 94,56 83,63 79,76 C 75,90 82,103 93,104 C 104,105 110,95 109,81 C 109,71 107,65 104,61 Z" fill="#fff"/>
+    <path d="M 111,61 C 121,57 133,64 137,77 C 141,91 135,103 124,104 C 113,105 107,95 108,81 C 108,71 109,65 111,61 Z" fill="#fff"/>
+    <circle cx="105" cy="82" r="3" fill="#000" stroke="none"/>
+    <circle cx="112" cy="82" r="3" fill="#000" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+/* Brand surfaces and outer controls; network figures, relation strokes,
+   text and internal node menus retain their original rendering. */
+@font-face {
+  font-family: "Work Sans";
+  src: url("../../../assets/fonts/WorkSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../../../assets/fonts/WorkSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+:root {
+  --if-accent: #ff7300;
+  --if-ink: #0c0c0a;
+  --if-surface: #fffffb;
+}
+body { background: var(--if-surface); }
+#app-layout { width: 100%; height: 100%; padding: 0; }
+#network { background: var(--if-surface); }
+#hud-layer .hud-card:not(.hud-card--ghost) { background: rgba(255, 255, 251, 0.78); }
+#hud-layer #hud-controls, #hud-layer #hud-stats { background: rgba(255, 255, 251, 0.55); }
+#hud-layer input { background: var(--if-surface); }
+#hud-layer .input-icon-btn { background: rgba(255, 255, 251, 0.92); }
+#hud-layer .input-icon-btn:hover { background: rgba(255, 255, 251, 0.98); }
+#hud-layer .controls-wrap::after, #hud-layer .controls-wrap::before,
+#hud-layer .input-icon-btn.has-tip::after, #hud-layer .input-icon-btn.has-tip::before {
+  background: rgba(255, 255, 251, 0.96);
+}
+#hud-layer .stat-row:not(.stat-pulse) { background: rgba(255, 255, 251, 0.65); }
+.loader-card { background: rgba(255, 255, 251, 0.72); }
+#canvas-loader { background: rgba(255, 255, 251, 0.92); }
+#zeit-widget .zeit-analog line[stroke="#1976d2"] { stroke: var(--if-accent); }
+#zeit-widget .zeit-analog circle[fill="#1976d2"] { fill: var(--if-accent); }
+#hud-layer, #hud-layer input, #hud-layer button, .loader-card {
+  font-family: "Work Sans", sans-serif;
+}
+#hud-layer .btn, #hud-layer .stat-val { font-weight: 500; }
+#hud-layer .btn-primary { background: var(--if-accent); color: var(--if-ink); }
+#hud-layer .btn-primary:hover { background: #ffe4cd; }
+#hud-layer .btn-warning { background: #ffe4cd; color: var(--if-ink); border-color: var(--if-accent); }
+#hud-layer .btn-warning:hover { background: var(--if-accent); }
+#hud-layer .stat-val, #hud-layer .export-icon:hover, #hud-layer .input-icon-btn:hover {
+  color: var(--if-accent);
+}
+#hud-layer .input-icon-btn:not(:disabled), #hud-layer .zeit-wochentag { color: var(--if-accent); }
+#hud-layer .zeit-tag.active { background: var(--if-accent); color: var(--if-ink); }
+#hud-layer input:focus { border-color: var(--if-accent); box-shadow: 0 0 0 3px #ff73001f; }
+#hud-layer button:focus-visible, #hud-layer input:focus-visible {
+  outline: 2px solid var(--if-ink);
+  outline-offset: 3px;
+}
+.loader-spinner { border-color: #ffe4cd; border-top-color: var(--if-accent); }

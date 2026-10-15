@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Rechte Hand an der Hüfte</title>
+  <g id="armrechts9" style="display:inline;fill:none;stroke:#000;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 138,144 C 149,151 154,164 152,176 C 150,185 143,187 137,179"/>
+    <path d="M 137,179 C 134,175 132,170 134,167 C 136,164 139,166 140,169 C 142,166 145,168 144,171 C 146,169 148,172 146,175 C 146,179 142,182 137,179 Z" fill="#fff"/>
+  </g>
+</svg>
