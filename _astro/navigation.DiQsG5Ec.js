@@ -1,0 +1,1 @@
+var e=/^[a-z][a-z\d+\-.]*:/i;function t(t){return!t||t.startsWith(`#`)||t.startsWith(`//`)||e.test(t)?t:`${`/`.endsWith(`/`)?`/`.slice(0,-1):`/`}${t.startsWith(`/`)?t:`/${t}`}`}var n=`home-concern-explorer:navigate`;function r(e){let n=new URLSearchParams({leistung:e});return`${t(`/`)}?${n.toString()}#wann-menschen-und-organisationen-mit-uns-arbeiten`}export{r as n,n as t};

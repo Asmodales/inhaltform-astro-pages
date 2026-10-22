@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Links winkend</title>
+  <g id="armlinks6" style="display:inline;fill:none;stroke:#000;stroke-width:2.65;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 72,144 C 62,139 53,130 48,118"/>
+    <path d="M 48,118 C 44,114 40,110 40,105 C 40,102 42,101 44,104 L 46,108 L 44,98 C 44,95 47,94 48,98 L 50,105 L 50,95 C 50,92 53,92 54,95 L 54,105 L 57,98 C 58,95 61,96 60,100 L 58,109 C 63,107 66,110 62,114 C 58,118 55,120 53,124"/>
+  </g>
+</svg>
