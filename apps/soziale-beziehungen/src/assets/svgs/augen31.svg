@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Eng zusammen</title>
+  <g id="augen31" style="display:inline;stroke:#000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 105,60 C 94,55 83,62 80,76 C 77,91 84,104 95,104 C 105,104 110,94 109,80 C 109,70 108,64 105,60 Z" fill="#fff"/>
+    <path d="M 108,60 C 117,55 130,61 135,75 C 140,90 134,104 123,105 C 111,105 106,94 107,80 C 107,69 108,64 108,60 Z" fill="#fff"/>
+    <circle cx="101" cy="82" r="2.7" fill="#000" stroke="none"/>
+    <circle cx="113" cy="82" r="2.7" fill="#000" stroke="none"/>
+  </g>
+</svg>
