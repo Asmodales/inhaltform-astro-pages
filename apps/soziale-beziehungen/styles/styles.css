@@ -1,0 +1,830 @@
+/*!
+ * styles.css – Design für die Teamdynamik-Visualisierung
+ * (c) 2026 Stefan Pätz, Inhalt & Form Beratungsgesellschaft mbH (LöWe – Lösungsorientierte Weiterbildung)
+ * Idee, Gestaltung und Umsetzung: Stefan Pätz
+ * Verwendung nur mit Hinweis auf Urheber. Bei Fragen: https://loewe-weiterbildung.de/
+ */
+
+html, body { height: 100%; }
+
+body{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
+  overflow: auto;
+}
+
+/* ===== App-Layout: Vollfläche ===== */
+#app-layout{
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* ===== Canvas Loader (sichtbar bis html.canvas-ready) ===== */
+#canvas-loader{
+  position: absolute;
+  inset: 0;
+  z-index: 80; /* über SVG, unter HUD */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+  background: linear-gradient(180deg, rgba(245,247,250,0.92), rgba(245,247,250,0.78));
+  opacity: 1;
+  transition: opacity 180ms ease-out;
+}
+
+.loader-card{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(215,221,231,0.85);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.08);
+  backdrop-filter: blur(8px);
+
+  padding: 12px 14px;
+  color: #475467;
+}
+
+.loader-text{
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+@keyframes spin{ to { transform: rotate(360deg); } }
+
+.loader-spinner{
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,122,204,0.25);
+  border-top-color: rgba(0,122,204,0.95);
+  animation: spin 0.9s linear infinite;
+}
+
+/* Wenn ready: Loader ausblenden */
+html.canvas-ready #canvas-loader{ opacity: 0; }
+
+/* ===== Stage ===== */
+#stage{
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Viewport für Scale-Berechnung */
+#canvas-viewport{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 6px;
+  box-sizing: border-box;
+
+  text-align: left; /* keine CSS-Zentrierung; canvasScale.js übernimmt */
+}
+
+/* Auf diesen Container wird per JS transform: scale(x) gesetzt */
+#canvas-scaler{
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 1440px;
+  height: 900px;
+
+  display: block;
+  text-align: left;
+
+  transform-origin: 0 0;
+  will-change: transform;
+
+  /* sauberer Start */
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+}
+
+html.canvas-ready #canvas-scaler{ opacity: 1; }
+
+/* SVG */
+#network{
+  display: block;
+  width: 1440px;
+  height: 900px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HUD Layer (4 Ecken) ===== */
+#hud-layer{
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.hud-card{
+  pointer-events: auto;
+
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(215,221,231,0.9);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.08);
+  backdrop-filter: blur(6px);
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  max-width: 260px;
+}
+
+.hud-card--ghost{
+  background: rgba(255,255,255,0);
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0;
+}
+
+.hud-title{
+  font-size: 10px;
+  font-weight: 800;
+  color: #6b778c;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+/* Positionen */
+#hud-controls{
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  overflow: visible; /* Tooltip darf raus */
+}
+
+#canvas-hud{
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+
+#hud-stats{
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  max-width: 320px;
+}
+
+#hud-export{
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  max-width: 240px;
+}
+
+/* Stats per JS temporär ausblendbar */
+#hud-stats{
+  transition: opacity 120ms ease-out, transform 120ms ease-out;
+}
+#hud-stats.is-hidden{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+/* =========================
+   Controls – clean + Tooltip
+   ========================= */
+
+.hud-card--controls{
+  background: rgba(255,255,255,0.55);
+  border: 0;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.08);
+  backdrop-filter: blur(8px);
+
+  padding: 12px;
+  border-radius: 16px;
+  width: 360px;
+}
+
+.controls-wrap{ position: relative; }
+
+.controls-wrap::after{
+  content: attr(data-tip);
+  position: absolute;
+
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+
+  max-width: 340px;
+  padding: 10px 12px;
+
+  font-size: 12px;
+  line-height: 1.25;
+
+  color: #344054;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(215,221,231,0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.10);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  z-index: 200;
+}
+
+.controls-wrap::before{
+  content: "";
+  position: absolute;
+
+  left: 22px;
+  top: 100%;
+  margin-top: 5px;
+
+  width: 10px;
+  height: 10px;
+
+  background: rgba(255,255,255,0.92);
+  border-left: 1px solid rgba(215,221,231,0.95);
+  border-top: 1px solid rgba(215,221,231,0.95);
+
+  transform: rotate(45deg);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+
+  z-index: 200;
+}
+
+.controls-wrap:hover::after,
+.controls-wrap:focus-within::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+.controls-wrap:hover::before,
+.controls-wrap:focus-within::before{
+  opacity: 1;
+}
+
+/* ===== Input + Mini-Buttons (inline, clean) ===== */
+.input-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+#person-input{
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Platz rechts für 2 Buttons (+ / −) */
+  padding: 0.7rem 84px 0.7rem 0.8rem;
+
+  border: 1px solid #cfd6e2;
+  border-radius: 12px;
+  background: #fff;
+  outline: none;
+
+  font: inherit;
+  font-size: 15px;
+}
+
+#person-input:focus{
+  border-color: #007acc;
+  box-shadow: 0 0 0 3px rgba(0,122,204,0.12);
+}
+
+.input-actions{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  /* wichtig für Touch/Klick */
+  pointer-events: auto;
+}
+
+/* Runde Icon-Buttons (+ / −) */
+.input-icon-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(207,214,226,0.95);
+  background: rgba(255,255,255,0.92);
+
+  color: #1565c0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.08s ease,
+    color 0.15s ease;
+}
+
+/* Minus-Button etwas neutraler */
+#btn-random-remove{
+  color: #5f6368;
+}
+
+/* =========================
+   Integrierter Tooltip (ersetzt title)
+   Clean-Variante ohne Blur
+   ========================= */
+
+/* Button dient als Anker für Tooltip */
+.input-icon-btn.has-tip{
+  position: relative;
+}
+
+/* Tooltip-Blase */
+.input-icon-btn.has-tip::after{
+  content: attr(data-tip);
+  position: absolute;
+
+  left: 50%;
+  top: calc(100% + 10px);
+
+  /* Nur horizontale Zentrierung (keine Y-Animation -> kein Blur) */
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+  padding: 8px 10px;
+
+  font-size: 12px;
+  line-height: 1.1;
+  font-weight: 650;
+
+  color: #344054;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(215,221,231,0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.10);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s ease;
+
+  z-index: 260;
+}
+
+/* Pfeil unterhalb des Buttons */
+.input-icon-btn.has-tip::before{
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  top: calc(100% + 5px);
+  transform: translateX(-50%) rotate(45deg);
+
+  width: 10px;
+  height: 10px;
+
+  background: rgba(255,255,255,0.96);
+  border-left: 1px solid rgba(215,221,231,0.95);
+  border-top: 1px solid rgba(215,221,231,0.95);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s ease;
+
+  z-index: 260;
+}
+
+/* Anzeigen bei Hover oder Tastaturfokus */
+.input-icon-btn.has-tip:hover::after,
+.input-icon-btn.has-tip:focus-visible::after{
+  opacity: 1;
+}
+
+.input-icon-btn.has-tip:hover::before,
+.input-icon-btn.has-tip:focus-visible::before{
+  opacity: 1;
+}
+
+/* Kein Tooltip bei deaktivierten Buttons */
+.input-icon-btn.has-tip:disabled::after,
+.input-icon-btn.has-tip:disabled::before{
+  display: none;
+}
+
+/* Hover-Feedback (nur auf dem Button selbst; leicht & clean) */
+.input-icon-btn:hover{
+  background: rgba(255,255,255,0.98);
+  border-color: rgba(0,122,204,0.35);
+  color: #005fa3;
+  transform: translateY(-1px);
+}
+
+/* Active-Feedback */
+.input-icon-btn:active{
+  transform: translateY(0px);
+  filter: brightness(0.98);
+}
+
+/* Disabled-Design */
+.input-icon-btn:disabled{
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  border-color: rgba(215,221,231,0.95);
+  color: #98a2b3;
+}
+
+/* Buttons-Reihe */
+.hud-row{
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Buttons */
+.btn{
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0.72em 0.9em;
+  font-size: 14px;
+  transition: background 0.17s, transform 0.05s, filter 0.17s;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{ background: #007acc; color: #fff; font-weight: 700; }
+.btn-primary:hover{ background: #005fa3; }
+
+.btn-outline{
+  background: #f2f4f7;
+  border: 1px solid #d7dde7;
+  color: #344054;
+  font-weight: 650;
+}
+.btn-outline:hover{ background: #e9edf3; }
+
+.btn-warning {
+  background: #fef3c7;   /* helles warmes Gelb */
+  color: #92400e;
+  font-weight: 700;
+  border: 1px solid #fcd34d;
+}
+.btn-warning:hover {
+  background: #fde68a;
+}
+
+/* ===== Statistik (clean) ===== */
+#hud-stats{
+  background: rgba(255,255,255,0.55);
+  border: 0;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.08);
+  backdrop-filter: blur(8px);
+
+  padding: 12px;
+  border-radius: 16px;
+
+  max-width: 340px;
+}
+
+#hud-stats .hud-title{ display: none; }
+
+.stats-list{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-row{
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid rgba(215,221,231,0.65);
+  background: rgba(255,255,255,0.65);
+  border-radius: 14px;
+  padding: 8px 10px;
+
+  min-width: 0;
+
+  transition: background 0.18s ease,
+              border-color 0.18s ease,
+              transform 0.18s ease;
+}
+
+.stat-ic{
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b778c;
+}
+.stat-ic svg{ width: 18px; height: 18px; fill: currentColor; }
+
+.stat-label{
+  font-size: 11px;
+  font-weight: 650;
+  color: #6b778c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-val{
+  font-weight: 900;
+  font-size: 16px;
+  color: #007acc;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+@keyframes statPulse{
+  0%   { transform: scale(1);   box-shadow: 0 0 0 rgba(0,0,0,0);   filter: none; }
+  35%  { transform: scale(1.06); box-shadow: 0 12px 32px rgba(255,214,0,0.28); filter: saturate(1.35); }
+  100% { transform: scale(1);   box-shadow: 0 0 0 rgba(0,0,0,0);   filter: none; }
+}
+
+.stat-row.stat-pulse{
+  border-color: rgba(255,214,0,0.75);
+  background: rgba(255,249,224,0.96);
+  animation: statPulse 360ms cubic-bezier(.22,.61,.36,1);
+}
+.stat-row.stat-pulse .stat-val{ color: #b26a00; }
+
+/* ===== Export ===== */
+.hud-export-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b778c;
+}
+
+.tools-sep{ color: #c4cbd6; user-select: none; }
+
+.export-icon{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #6b778c;
+  font-size: 11px;
+}
+.export-icon:hover{ color: #344054; }
+.export-icon .download-icon{ width: 14px; height: 14px; fill: currentColor; }
+
+/* ===== Zeit-Widget (HUD) ===== */
+.zeit-widget-inner{
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.zeit-tage{
+  display: flex;
+  gap: 7px;
+  justify-content: flex-end;
+}
+
+.zeit-tag{
+  width: 31px;
+  height: 40px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  background: rgba(231,235,242,0.75);
+  color: #475467;
+}
+
+.zeit-tag.active{
+  background: rgba(25,118,210,0.95);
+  color: #fff;
+}
+
+.zeit-main{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.zeit-digital{
+  min-width: 0;
+  line-height: 1.15;
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.zeit-wochentag{
+  font-weight: 800;
+  font-size: 1.05em;
+  color: rgba(25,118,210,0.95);
+}
+
+.zeit-uhrzeit{
+  font-size: 0.95em;
+  color: #475467;
+}
+
+/* ===== SVG/Interaktion ===== */
+.node-menu{
+  opacity: 0;
+  transform: scale(1);
+  transition:
+    opacity 0.18s cubic-bezier(.22,.61,.36,1),
+    transform 0.18s cubic-bezier(.22,.61,.36,1);
+  pointer-events: all;
+}
+.node-menu.visible{ opacity: 1; }
+.node-menu.shrinking{
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 0.23s cubic-bezier(.22,.61,.36,1),
+    transform 0.19s cubic-bezier(.22,.61,.36,1);
+}
+
+.menu-btn-bg{
+  filter: drop-shadow(0 1px 5px #ffecb37e);
+  transition:
+    transform 0.18s cubic-bezier(.22,.61,.36,1),
+    fill 0.5s cubic-bezier(.22,.61,.36,1),
+    opacity 0.18s,
+    filter 0.5s cubic-bezier(.22,.61,.36,1);
+}
+.menu-btn-bg.pop{ transform: scale(1.15); }
+.menu-btn-bg.clicked{
+  filter: drop-shadow(0 2px 16px #ffd600be);
+  opacity: 1;
+  fill: #ffe082 !important;
+  stroke-width: 3 !important;
+}
+
+.menu-hover-area{ fill: transparent !important; pointer-events: all; }
+.focus-glow{ filter: blur(3px); transition: opacity 0.2s; pointer-events: none; }
+
+#tooltip{ text-align: center; }
+/* ===== Tooltip (liegt im #canvas-scaler, damit er mitskaliert) ===== */
+#tooltip{
+  position: absolute;
+  display: none;
+  z-index: 120;
+  pointer-events: none;
+  max-width: 380px;
+}
+
+.link-hover{
+  stroke-width: 5 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 6px #bbb);
+}
+.cut-symbol{ stroke-linecap: round; pointer-events: none; }
+
+/* SVG Text */
+text{ font-family: "Segoe UI", Arial, sans-serif; font-size: 18px; }
+
+@keyframes aspectPulse{
+  0%   { transform: scale(1);   opacity: 0.45; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.aspect-pulse{
+  animation: aspectPulse 3.9s ease-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* =========================
+   Link-Highlight: weich & ohne Flackern
+   ========================= */
+.link{
+  transition: stroke-width 260ms ease, opacity 260ms ease, stroke 260ms ease;
+}
+
+.link.is-hot{
+  opacity: 0.95;
+}
+
+/* Optional: wenn du in Grundansicht die Linien dezent hältst */
+.link.is-cooling{
+  opacity: 0.72;
+}
+
+
+/* =========================
+   ✅ Touch/Sticky: exportierbar (DOM + CSS)
+   =========================
+   - is-sticky: aktive Linie
+   - is-dimmed: alle anderen, sobald Sticky aktiv ist
+*/
+.link.is-dimmed{
+  opacity: 0.18 !important;
+}
+
+.link.is-sticky{
+  opacity: 1 !important;
+  stroke-width: 5 !important;
+  filter: drop-shadow(0 0 6px #bbb);
+}
+
+/* =========================
+   Genogramm-Tooltip im Look der Adjektiv-Bubble
+   (überschreibt auch Inline-Styles aus index.html)
+   ========================= */
+#tooltip.tooltip-bubble{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+
+  padding: 12px 16px !important;
+
+  background: rgba(250,250,250,0.94) !important;
+  border: 0.85px solid #9aa0a6 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+
+  color: #111 !important;
+  text-align: center !important;
+}
+
+.ui-busy {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* Pending badge for random +/- buttons */
+.has-pending {
+  position: relative;
+}
+
+/* Pending badge (real element, robust vs tooltips) */
+.has-pending-container {
+  position: relative;
+}
+
+.pending-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  background: #2563eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  pointer-events: none;      /* Tooltip/Click nicht stören */
+  z-index: 5;                /* über Button-Inhalt */
+  display: none;
+}

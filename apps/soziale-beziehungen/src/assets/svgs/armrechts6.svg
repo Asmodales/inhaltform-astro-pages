@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Rechts winkend</title>
+  <g id="armrechts6" style="display:inline;fill:none;stroke:#000;stroke-width:2.65;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 138,144 C 148,139 157,130 162,118"/>
+    <path d="M 162,118 C 166,114 170,110 170,105 C 170,102 168,101 166,104 L 164,108 L 166,98 C 166,95 163,94 162,98 L 160,105 L 160,95 C 160,92 157,92 156,95 L 156,105 L 153,98 C 152,95 149,96 150,100 L 152,109 C 147,107 144,110 148,114 C 152,118 155,120 157,124"/>
+  </g>
+</svg>

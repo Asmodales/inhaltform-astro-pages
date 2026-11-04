@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Besorgt</title>
+  <g id="augen35" style="display:inline;stroke:#000;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 103,63 C 95,58 84,64 80,76 C 76,90 82,102 92,103 C 103,105 109,95 108,82 C 108,72 106,66 103,63 Z" fill="#fff"/>
+    <path d="M 111,63 C 119,58 132,64 136,77 C 140,90 135,103 124,104 C 113,105 107,95 108,82 C 108,72 109,66 111,63 Z" fill="#fff"/>
+    <circle cx="95" cy="83" r="2.6" fill="#000" stroke="none"/>
+    <circle cx="122" cy="83" r="2.6" fill="#000" stroke="none"/>
+    <path d="M 82,66 C 89,61 96,60 102,64" fill="none"/>
+    <path d="M 114,64 C 121,60 130,62 136,68" fill="none"/>
+  </g>
+</svg>

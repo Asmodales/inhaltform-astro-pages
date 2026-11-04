@@ -1,0 +1,3 @@
+# Preserve imported original bytes (including CRLF) for the SHA-256 checks.
+src/** -text
+styles/styles.css -text

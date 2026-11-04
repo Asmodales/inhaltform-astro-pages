@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Linke Hand an der Hüfte</title>
+  <g id="armlinks9" style="display:inline;fill:none;stroke:#000;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 72,144 C 61,151 56,164 58,176 C 60,185 67,187 73,179"/>
+    <path d="M 73,179 C 76,175 78,170 76,167 C 74,164 71,166 70,169 C 68,166 65,168 66,171 C 64,169 62,172 64,175 C 64,179 68,182 73,179 Z" fill="#fff"/>
+  </g>
+</svg>

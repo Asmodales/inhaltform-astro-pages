@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Schmal und hoch</title>
+  <g id="body7" style="display:inline;fill:#fff;stroke:#000;stroke-width:3.1;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 108,23 C 87,18 69,29 59,47 C 49,66 50,94 60,112 C 69,127 84,134 104,135 C 123,136 140,128 150,112 C 161,94 160,66 151,48 C 142,31 125,24 108,23 Z"/>
+    <path d="M 91,137 C 86,151 85,169 85,190 L 84,260 C 96,264 118,265 130,260 L 129,190 C 129,168 127,150 121,137 C 112,140 100,140 91,137 Z"/>
+    <path d="M 15,264 C 40,260 70,261 96,263 C 125,265 153,268 187,262" fill="none" stroke-width="1.7"/>
+    <path d="M 192,258 C 195,257 197,256 199,256" fill="none" stroke-width="2.1"/>
+  </g>
+</svg>

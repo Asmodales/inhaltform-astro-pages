@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <title>Rechts zeigend</title>
+  <g id="armrechts7" style="display:inline;fill:none;stroke:#000;stroke-width:2.65;stroke-linecap:round;stroke-linejoin:round">
+    <path d="M 138,144 C 150,138 158,129 165,118 C 169,112 173,108 177,105"/>
+    <path d="M 176,105 C 179,103 182,101 185,99 C 188,97 190,94 188,92 C 186,90 183,93 181,94 L 168,100 C 165,101 163,104 164,108 C 165,112 168,115 171,116"/>
+    <path d="M 176,105 C 179,108 179,112 175,114"/>
+  </g>
+</svg>
